@@ -12,6 +12,10 @@
             this.load.audio('gameMusic', './assets/the-big-heist-188391.mp3')
             this.load.image('PlayBackground', './assets/PlayBackground.png')
             this.load.image('groundCollision', './assets/groundCollision.png')
+            this.load.audio('jumpsound1', './assets/Woosh-D2-www.fesliyanstudios.com.mp3')
+            this.load.audio('jumpsound2', './assets/Woosh-D5-www.fesliyanstudios.com.mp3')
+            this.load.audio('jumpsound3', './assets/Woosh-D6-www.fesliyanstudios.com.mp3')
+            this.load.audio('impact', './assets/medium-explosion-40472.mp3')
         }
 
         create() //add custom background, animation configuration, display menu text and instructions, define keys
@@ -41,7 +45,7 @@
             ({
                 key: 'mineAnims',
                 frames: this.anims.generateFrameNames('animations', {prefix: "mine", start: 1, end: 4, suffix: ".png"}),
-                repeat: 0,
+                repeat: -1,
                 frameRate: 12
             })
         }
@@ -50,9 +54,10 @@
         {
             if (this.startGame.isDown)
             {
-                this.music.play()
-                this.music.setVolume(0.0)
+                this.music.play({loop: true})
+                this.music.setVolume(0.3)
                 this.scene.start('playScene')
+
             }
 
         }

@@ -3,6 +3,8 @@
 // Date: 2/14/2024
 
 //credits: https://pixabay.com/music/crime-scene-the-big-heist-188391/
+//         https://www.fesliyanstudios.com/royalty-free-sound-effects-download/whoosh-and-swoosh-73
+//         https://pixabay.com/sound-effects/medium-explosion-40472/
 
 'use strict'
 
@@ -18,10 +20,10 @@ let config =
         arcade: 
         {
             gravity: { y: 500}, 
-            debug: true
+            debug: false
         }
     },
-    scene: [ Menu, Play ]
+    scene: [ Menu, Play, GameOver ]
 }
 
 let game = new Phaser.Game(config)
